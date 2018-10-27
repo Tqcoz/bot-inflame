@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
     let helpEmbed = new Discord.RichEmbed()
     .setTitle("~Inflame Bot Help - Moderation~")
     .setThumbnail("https://mbtskoudsalg.com/images/flame-art-png-6.png")
-    .addField("Mod Commands", "`.mute`, `.kick`, `.ban`.")
+    .addField("Mod Commands", "`.mute`, `.kick`, `.ban`, `.retell`.")
     .addField("Prefix", "Bot's default prefix is `.`")
     .setColor("#fc905a");
 
