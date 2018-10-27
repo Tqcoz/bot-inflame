@@ -15,7 +15,7 @@ if(!message.content.startsWith(prefix)) return ;
   let user = [message.author.username];
 
   let coinEmbed = new Discord.RichEmbed()
-  .setColor("#00FF00")
+  .setColor("#177e89")
   .addField("💸", `**${user}**, you have ${uCoins} coins!`);
 
   message.channel.send(coinEmbed).then(msg => {msg.delete(5000)});
