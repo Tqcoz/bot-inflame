@@ -45,7 +45,7 @@ tomute.addRole(muterole.id);
   await(tomute.addRole(muterole.id));
   let mutedEmbed = new Discord.RichEmbed()
   .setDescription(`:white_check_mark: <@${tomute.id}> has been muted for ${ms(ms(mutetime))}.`) 
-  .setColor("#2eb82e");
+  .setColor("#660099");
   message.channel.send(mutedEmbed);
 
   setTimeout(function(){
