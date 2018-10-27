@@ -7,3 +7,6 @@ exports.run = (client, msg, args) => {
   msg.channel.send({embed});
 };
 
+module.exports.help = {
+  name: "embed"
+}
