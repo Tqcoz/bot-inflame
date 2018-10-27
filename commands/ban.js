@@ -17,7 +17,7 @@ module.exports.run = async (bot, message, args) => {
   if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send(noBanEmbed);
      let banEmbed = new discord.RichEmbed()
     .setDescription("~New Ban~")
-    .setColor("#8B0000")
+    .setColor("#732699")
     .addField("Banned User", `${bUser} with ID ${bUser.id}`)
     .addField("Banned By", `<@${message.author.id}> with ID ${message.author.id}`)
     .addField("Banned In", message.channel)
