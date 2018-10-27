@@ -25,8 +25,10 @@ if(!args[0]) return message.channel.send("ERROR: Mention a user.");
     coins: pCoins + parseInt(args[1])
   };
 let senderName = message.member;
-  message.channel.send(`${senderName} has OPped ${pUser} ${args[1]} coins.`);
-
+let coinedEmbed = new Discord.RichEmbed()
+.setDescription(`:moneybag: ${senderName} has OPped ${pUser} ${args[1]} coins!`)
+.setColor("#7FFFD4");
+  message.channel.send(coinedEmbed);
   fs.writeFile("./coins.json", JSON.stringify(coins), (err) => {
     if(err) cosole.log(err)
   });
