@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
     .addField("About", "InflameBot is a coin and leveling system bot made for InflameMC and the InflameMC Discord.")
     .addField("User Commands", "`.help`, `.coins`, `.pay [@user] {amount}`")
     .addField("Prefix", "Bot's default prefix is `.`")
-    .setColor("#0000FF");
+    .setColor("#edae49");
 
     message.channel.send(helpEmbed);
 }
