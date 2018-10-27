@@ -4,10 +4,10 @@ let coins = require("../coins.json");
 const prefix = ".";
 
 module.exports.run = async (bot, message, args) => {
-  if(!message.content.startsWith(prefix)) return ;
+  if(!message.content.startsWith(prefix)) return;
   let noPermsEmbed = new Discord.RichEmbed()
   .setDescription("Nope!");
-  if(!message.author.hasPermission("ADMINISTRATOR") return ;
+  if(!message.author.hasPermission("ADMINISTRATOR") return;
     //!pay @isatisfied 59345
   let pUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
 
