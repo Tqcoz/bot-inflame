@@ -66,6 +66,15 @@ bot.on("message", async message => {
 
   message.channel.send(coinEmbed).then(msg => {msg.delete(5000)});
   }
+  
+         //!reload
+       if(command === `${botsettings.prefix}reload`) {
+            console.clear();
+               bot.destroy()
+               bot.login(botsettings.token);
+             message.channel.send("Reloaded");
+         return;
+        }
 
 
   let prefix = prefixes[message.guild.id].prefixes;
