@@ -68,7 +68,7 @@ bot.on("message", async message => {
   }
   
          //!reload
-       if(command === `${botsettings.prefix}reload`) {
+       if(command === `.reload`) {
             console.clear();
                bot.destroy()
                bot.login(botsettings.token);
