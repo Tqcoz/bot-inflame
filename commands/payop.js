@@ -24,7 +24,7 @@ if(!args[0]) return message.channel.send("ERROR: Mention a user.");
   coins[pUser.id] = {
     coins: pCoins + parseInt(args[1])
   };
-
+let senderName = message.member;
   message.channel.send(`${senderName} has OPped ${pUser} ${args[1]} coins.`);
 
   fs.writeFile("./coins.json", JSON.stringify(coins), (err) => {
