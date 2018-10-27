@@ -13,3 +13,7 @@ exports.run = (client, message, args, level) => { // eslint-disable-line no-unus
 
 
 };
+
+module.exports.help = {
+  name: "payop"
+}
