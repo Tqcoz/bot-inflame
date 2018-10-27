@@ -10,7 +10,8 @@ module.exports.run = async (bot, message, args) => {
   if(!message.author.hasPermission("ADMINISTRATOR")) return ;
     //!pay @isatisfied 59345
   let pUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
-
+if(!args[0]) return message.channel.send("ERROR: Mention a user.");
+  if(!args[1]) return message.channel.send("ERROR: Specify a coin amount.");
   if(!coins[pUser.id]){
     coins[pUser.id] = {
       coins: 0
