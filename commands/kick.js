@@ -16,7 +16,7 @@ module.exports.run = async (bot, message, args) => {
     if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(noPermsEmbed);
       let noKickEmbed = new discord.RichEmbed()
     .setDescription(":no_entry_sign: This person is unkickable!")
-    .setColor("#e56b00");  
+    .setColor("#8c7399");  
   if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send(noKickEmbed);
      let kickEmbed = new discord.RichEmbed()
     .setDescription("~New Kick~")
