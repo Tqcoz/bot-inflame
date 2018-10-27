@@ -3,7 +3,7 @@ const prefix = ".";
 const bot = new discord.Client();
 module.exports.run = async (bot, message, args) => {
 if(!message.content.startsWith(prefix)) return ;
-    let reason = message.guild.members.get(args[0]));
+    let reason = message.guild.members.get(args[0]);
 
     let reportEmbed = new discord.RichEmbed()
     .setTitle("**New Ticket**")
