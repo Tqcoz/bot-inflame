@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args) => {
     .setThumbnail("https://mbtskoudsalg.com/images/flame-art-png-6.png")
     .addField("Mod Commands", "`.mute`, `.kick`, `.ban`.")
     .addField("Prefix", "Bot's default prefix is `.`")
-    .setColor("#fccb5a");
+    .setColor("#fc905a");
 
     message.channel.send(helpEmbed);
 }
