@@ -7,7 +7,7 @@ if(!message.content.startsWith(prefix)) return ;
 
     let reportEmbed = new discord.RichEmbed()
     .setTitle("**New Ticket**")
-    .setColor("#bf42f4")
+    .setColor("#ca054d")
     .addField("Reported By", `${message.author} with user ID ${message.author.id}.`)
     .addField("Channel", message.channel)
     .addField("Time", message.createdAt)
