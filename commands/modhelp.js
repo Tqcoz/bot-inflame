@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args) => {
     .setThumbnail("https://cdn.discordapp.com/attachments/503814751139135509/504044622402551818/InflameLogo.png")
     .addField("Mod Commands", "`.mute`, `.kick`, `.ban`.")
     .addField("Prefix", "Bot's default prefix is `.`")
-    .setColor("#0000FF");
+    .setColor("#00ace6");
 
     message.channel.send(helpEmbed);
 }
