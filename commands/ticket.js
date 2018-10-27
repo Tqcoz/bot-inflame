@@ -1,5 +1,6 @@
 const discord = require("discord.js");
 const prefix = ".";
+const bot = new discord.Client();
 module.exports.run = async (bot, message, args) => {
 if(!message.content.startsWith(prefix)) return ;
     let reason = args.join(" ").slice(22);
