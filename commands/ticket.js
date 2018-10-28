@@ -6,7 +6,7 @@ module.exports.run = async (bot, msg) => {
     let args = msg.content.split(' ').slice(1).join(' ');
     msg.delete();
     if (cooldown.has(msg.author.id && msg.guild.id)) {
-        return msg.reply('**[COOLDOWN]** Sending tickets has **5 Minutes** Cooldown!');
+        return msg.reply('**[COOLDOWN]** Sending tickets has `5 Minutes` Cooldown!');
     }
     if (args.length < 1) {
         return msg.reply(`You must give me something to report first ${msg.author}`);
