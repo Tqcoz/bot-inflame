@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
 const moment = require('moment');
-const reportschannel = message.guild.channels.find(`name`, "tickets");
 
 const cooldown = new Set();
 module.exports.run = async (bot, msg) => {
@@ -17,6 +16,7 @@ module.exports.run = async (bot, msg) => {
     setTimeout(() => {
         cooldown.delete(msg.author.id && msg.guild.id);
     }, 300000);
+    let reportschannel = message.guild.channels.find(`name`, "tickets");
     let guild = msg.guild;
     const cnl = bot.channels.get('421569960029192202');
     msg.reply(`Hey, ${msg.author}, we got your report! We will reply soon as possible! Here is the full ticket:`);
