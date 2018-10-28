@@ -18,7 +18,7 @@ module.exports.run = async (bot, message, args) => {
     if(!rreason) return errors.noReason(message.channel);
 
     let reportEmbed = new Discord.RichEmbed()
-    .setDescription("Reports")
+    .setDescription("Ticket")
     .setColor(orange)
     .addField("Staff targeted", `${rUser} with ID: ${rUser.id}`)
     .addField("Ticket By", `${message.author} with ID: ${message.author.id}`)
@@ -33,5 +33,5 @@ module.exports.run = async (bot, message, args) => {
 }
 
 module.exports.help = {
-  name: "ticket"
+  name: "new"
 }
