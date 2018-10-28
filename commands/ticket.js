@@ -1,28 +1,36 @@
-const discord = require("discord.js");
-const prefix = ".";
-const bot = new discord.Client();
-module.exports.run = async (bot, message, args) => {
-if(!message.content.startsWith(prefix)) return ;
-    let reason = message.guild.members.get(args[1]);
+const Discord = require("discord.js");
+const botconfig = require("../botconfig.json");
+const red = botconfig.red;
+const green = botconfig.green;
+const orange = botconfig.orange;
+const errors = require("../utils/errors.js");
 
-    let reportEmbed = new discord.RichEmbed()
-    .setTitle("**New Ticket**")
-    .setColor("#ca054d")
-    .addField("Reported By", `${message.author} with user ID ${message.author.id}.`)
+module.exports.run = async (bot, message, args) => {
+    message.delete();
+    if(args[0] == "help"){
+      message.reply("Usage: !ticket <user> <reason>");
+      return;
+    }
+    let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    if(!rUser) return errors.cantfindUser(message.channel);
+    let rreason = args.join(" ").slice(22);
+    if(!rreason) return errors.noReason(message.channel);
+
+    let reportEmbed = new Discord.RichEmbed()
+    .setDescription("Tickets")
+    .setColor(orange)
+    .addField("Reported User", `${rUser} with ID: ${rUser.id}`)
+    .addField("Reported By", `${message.author} with ID: ${message.author.id}`)
     .addField("Channel", message.channel)
     .addField("Time", message.createdAt)
-    .addField("Reason", reason);
+    .addField("Reason", rreason);
 
     let reportschannel = message.guild.channels.find(`name`, "tickets");
-    if(!reportschannel) return message.channel.send("Couldn't locate a tickets channel. Please contact a server manager. The channel must be named: `tickets`.")
-
-        message.delete().catch(O_o=>{});
-        reportschannel.send(reportEmbed)
-        if(reportschannel) return message.channel.send("Ticket sent, thanks!")
+    if(!reportschannel) return message.channel.send("Couldn't find tickets channel.");
+    reportschannel.send(reportEmbed);
 
 }
 
 module.exports.help = {
-    name: "ticket"
-
+  name: "ticket"
 }
