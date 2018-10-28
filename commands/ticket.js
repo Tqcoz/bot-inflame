@@ -11,8 +11,6 @@ module.exports.run = async (bot, message, args) => {
       message.reply("Usage: !ticket <topic> <reason>");
       return;
     }
-    let rTopic = (args[0]);
-    if(!rTopic) return errors.cantfindUser(message.channel);
     let rreason = args.join(" ").slice(22);
     if(!rreason) return errors.noReason(message.channel);
 
