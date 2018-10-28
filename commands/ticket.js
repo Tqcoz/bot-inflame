@@ -9,7 +9,7 @@ let stafferr = ("No Staff is mentioned after .ticket ")
 module.exports.run = async (bot, message, args) => {
     message.delete();
     if(args[0] == "help"){
-      message.reply("Usage: .ticket <staff targeted to review this ticket> <reason>");
+      message.send("Ticket Usage: `.new <targeted staff> <reason of ticket>`");
       return;
     }
     let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
