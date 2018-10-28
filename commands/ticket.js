@@ -1,9 +1,6 @@
 const Discord = require('discord.js');
 const moment = require('moment');
 
-    let reportschannel = message.guild.channels.find(`name`, "tickets");	const cooldown = new Set();
-    if(!reportschannel) return message.channel.send("Couldn't locate a tickets channel. Please contact a server manager. The channel must be named: `tickets`.")
-
 const cooldown = new Set();
 module.exports.run = async (bot, msg) => {
     let args = msg.content.split(' ').slice(1).join(' ');
@@ -19,6 +16,11 @@ module.exports.run = async (bot, msg) => {
     setTimeout(() => {
         cooldown.delete(msg.author.id && msg.guild.id);
     }, 300000);
+    
+        let reportschannel = message.guild.channels.find(`name`, "tickets");	const cooldown = new Set();
+    if(!reportschannel) return message.channel.send("Couldn't locate a tickets channel. Please contact a server manager. The channel must be named: `tickets`.")
+
+    
     let guild = msg.guild;
     const cnl = bot.channels.get('421569960029192202');
     msg.reply(`Hey, ${msg.author}, we got your ticket! We will reply soon as possible! Here is the full ticket:`);
