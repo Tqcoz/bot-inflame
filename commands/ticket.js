@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const moment = require('moment');
 
-const cooldown = new Set();
+let cooldown = new Set();
 module.exports.run = async (bot, msg) => {
     let args = msg.content.split(' ').slice(1).join(' ');
     msg.delete();
