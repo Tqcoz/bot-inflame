@@ -4,6 +4,7 @@ const red = botconfig.red;
 const green = botconfig.green;
 const orange = botconfig.orange;
 const errors = require("../utils/errors.js");
+let stafferr = ("No Staff is mentioned after .ticket ")
 
 module.exports.run = async (bot, message, args) => {
     message.delete();
@@ -12,7 +13,7 @@ module.exports.run = async (bot, message, args) => {
       return;
     }
     let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    if(!rUser) return 'Cannot find the Staff Targeted. Remember this is the format: .ticket <staff targeted to review this ticket> <reason>';
+    if(!rUser) return stafferr;
     let rreason = args.join(" ").slice(22);
     if(!rreason) return errors.noReason(message.channel);
 
