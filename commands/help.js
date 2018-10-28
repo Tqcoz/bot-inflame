@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
     .setTitle("~Inflame Bot Help~")
     .setThumbnail("https://mbtskoudsalg.com/images/flame-art-png-6.png")
     .addField("About", "InflameBot is a coin and leveling system bot made for InflameMC and the InflameMC Discord.")
-    .addField("User Commands", "`.help`, `.coins`, `.pay [@user] {amount}`, `.level`, `.new <targeted staff> <reason/question of ticket>`")
+    .addField("User Commands", "`.help`, `.coins`, `.pay [@user] {amount}`, `.level`, `.new help`")
     .addField("Prefix", "Bot's default prefix is `.`")
     .setColor("#edae49");
 
