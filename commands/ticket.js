@@ -1,6 +1,9 @@
 const Discord = require('discord.js');
 const moment = require('moment');
 
+    let reportschannel = message.guild.channels.find(`name`, "tickets");	const cooldown = new Set();
+    if(!reportschannel) return message.channel.send("Couldn't locate a tickets channel. Please contact a server manager. The channel must be named: `tickets`.")
+
 const cooldown = new Set();
 module.exports.run = async (bot, msg) => {
     let args = msg.content.split(' ').slice(1).join(' ');
@@ -25,7 +28,7 @@ module.exports.run = async (bot, msg) => {
   .setThumbnail(msg.author.displayAvatarURL)
   .setFooter(`${moment().format('MMMM Do YYYY, h:mm:ss a')}`)
   .setColor(16711728);
-    msg.channel.send({embed: embed2});
+    reportschannel.send({embed: embed2});
     const embed = new Discord.RichEmbed()
   .setAuthor(`Ticket from ${msg.author.tag}`, msg.author.displayAvatarURL)
   .addField('Ticket:', `**Report's Author:** ${msg.author.tag}\n**Server:** ${guild.name}\n**Full report:** ${args}`)
