@@ -1,12 +1,13 @@
 const Discord = require('discord.js');
 const moment = require('moment');
+let reportschannel = message.guild.channels.find(`name`, "tickets");
 
-let cooldown = new Set();
+const cooldown = new Set();
 module.exports.run = async (bot, msg) => {
     let args = msg.content.split(' ').slice(1).join(' ');
     msg.delete();
     if (cooldown.has(msg.author.id && msg.guild.id)) {
-        return msg.reply('**[COOLDOWN]** Sending tickets has `5 Minutes` Cooldown!');
+        return msg.reply('**[COOLDOWN]** Sending tickets has **5 Minutes** Cooldown!');
     }
     if (args.length < 1) {
         return msg.reply(`You must give me something to report first ${msg.author}`);
@@ -16,21 +17,16 @@ module.exports.run = async (bot, msg) => {
     setTimeout(() => {
         cooldown.delete(msg.author.id && msg.guild.id);
     }, 300000);
-    
-        let reportschannel = message.guild.channels.find(`name`, "tickets");	const cooldown = new Set();
-    if(!reportschannel) return message.channel.send("Couldn't locate a tickets channel. Please contact a server manager. The channel must be named: `tickets`.")
-
-    
     let guild = msg.guild;
     const cnl = bot.channels.get('421569960029192202');
-    msg.reply(`Hey, ${msg.author}, we got your ticket! We will reply soon as possible! Here is the full ticket:`);
+    msg.reply(`Hey, ${msg.author}, we got your report! We will reply soon as possible! Here is the full ticket:`);
     const embed2 = new Discord.RichEmbed()
   .setAuthor(`Ticket from ${msg.author.tag}`, msg.author.displayAvatarURL)
   .addField('Ticket:', `**Tickets's Author:** ${msg.author.tag}\n**Server:** ${guild.name}\n**Full ticket:** ${args}`)
   .setThumbnail(msg.author.displayAvatarURL)
   .setFooter(`${moment().format('MMMM Do YYYY, h:mm:ss a')}`)
   .setColor(16711728);
-    reportschannel.send({embed: embed2});
+    msg.channel.send({embed: embed2});
     const embed = new Discord.RichEmbed()
   .setAuthor(`Ticket from ${msg.author.tag}`, msg.author.displayAvatarURL)
   .addField('Ticket:', `**Report's Author:** ${msg.author.tag}\n**Server:** ${guild.name}\n**Full report:** ${args}`)
@@ -41,5 +37,5 @@ module.exports.run = async (bot, msg) => {
 };
 
 module.exports.help = {
-    name: 'ticket'
+    name: 'Ticket'
 };
