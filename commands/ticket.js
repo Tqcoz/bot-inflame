@@ -8,18 +8,18 @@ const errors = require("../utils/errors.js");
 module.exports.run = async (bot, message, args) => {
     message.delete();
     if(args[0] == "help"){
-      message.reply("Usage: !ticket <user> <reason>");
+      message.reply("Usage: !ticket <topic> <reason>");
       return;
     }
-    let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    if(!rUser) return errors.cantfindUser(message.channel);
+    let rTopic = message.guild.members.get(args[0]));
+    if(!rTopic) return errors.cantfindUser(message.channel);
     let rreason = args.join(" ").slice(22);
     if(!rreason) return errors.noReason(message.channel);
 
     let reportEmbed = new Discord.RichEmbed()
     .setDescription("Tickets")
     .setColor(orange)
-    .addField("Reported User", `${rUser} with ID: ${rUser.id}`)
+    .addField("Topic", `${rUser} with ID: ${rUser.id}`)
     .addField("Reported By", `${message.author} with ID: ${message.author.id}`)
     .addField("Channel", message.channel)
     .addField("Time", message.createdAt)
