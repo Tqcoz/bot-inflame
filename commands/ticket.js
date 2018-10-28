@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const moment = require('moment');
-let reportschannel = message.guild.channels.find(`name`, "tickets");
+const reportschannel = message.guild.channels.find(`name`, "tickets");
 
 const cooldown = new Set();
 module.exports.run = async (bot, msg) => {
