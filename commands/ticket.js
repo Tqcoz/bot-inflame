@@ -8,27 +8,29 @@ const errors = require("../utils/errors.js");
 module.exports.run = async (bot, message, args) => {
     message.delete();
     if(args[0] == "help"){
-      message.reply("Usage: !ticket <topic> <reason>");
+      message.reply("Usage: .ticket <staff targeted to review this ticket> <reason>");
       return;
     }
+    let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    if(!rUser) return 'Cannot find the Staff Targeted. Remember this is the format: .ticket <staff targeted to review this ticket> <reason>';
     let rreason = args.join(" ").slice(22);
     if(!rreason) return errors.noReason(message.channel);
 
     let reportEmbed = new Discord.RichEmbed()
-    .setDescription("Tickets")
+    .setDescription("Reports")
     .setColor(orange)
-    .addField("Topic", `${rTopic}`)
-    .addField("Reported By", `${message.author} with ID: ${message.author.id}`)
+    .addField("Staff targeted", `${rUser} with ID: ${rUser.id}`)
+    .addField("Ticket By", `${message.author} with ID: ${message.author.id}`)
     .addField("Channel", message.channel)
     .addField("Time", message.createdAt)
     .addField("Reason", rreason);
 
-    let reportschannel = message.guild.channels.find(`name`, "tickets");
-    if(!reportschannel) return message.channel.send("Couldn't find tickets channel.");
+    let reportschannel = message.guild.channels.find(`name`, "reports");
+    if(!reportschannel) return message.channel.send("Couldn't find reports channel.");
     reportschannel.send(reportEmbed);
 
 }
 
 module.exports.help = {
-  name: "ticket"
+  name: "report"
 }
