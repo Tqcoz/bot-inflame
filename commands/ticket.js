@@ -18,7 +18,7 @@ module.exports.run = async (bot, msg) => {
     }, 300000);
     let guild = msg.guild;
     const cnl = bot.channels.get('421569960029192202');
-    msg.reply(`Hey, ${msg.author}, we got your report! We will reply soon as possible! Here is the full ticket:`);
+    msg.reply(`Hey, ${msg.author}, we got your ticket! We will reply soon as possible! Here is the full ticket:`);
     const embed2 = new Discord.RichEmbed()
   .setAuthor(`Ticket from ${msg.author.tag}`, msg.author.displayAvatarURL)
   .addField('Ticket:', `**Tickets's Author:** ${msg.author.tag}\n**Server:** ${guild.name}\n**Full ticket:** ${args}`)
