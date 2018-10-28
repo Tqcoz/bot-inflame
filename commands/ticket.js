@@ -1,41 +1,28 @@
-const Discord = require('discord.js');
-const moment = require('moment');
+const discord = require("discord.js");
+const prefix = ".";
+const bot = new discord.Client();
+module.exports.run = async (bot, message, args) => {
+if(!message.content.startsWith(prefix)) return ;
+    let reason = message.guild.members.get(args[2]);
 
-const cooldown = new Set();
-module.exports.run = async (bot, msg) => {
-    let args = msg.content.split(' ').slice(1).join(' ');
-    msg.delete();
-    if (cooldown.has(msg.author.id && msg.guild.id)) {
-        return msg.reply('**[COOLDOWN]** Sending tickets has **5 Minutes** Cooldown!');
-    }
-    if (args.length < 1) {
-        return msg.reply(`You must give me something to report first ${msg.author}`);
-    }
+    let reportEmbed = new discord.RichEmbed()
+    .setTitle("**New Ticket**")
+    .setColor("#ca054d")
+    .addField("Reported By", `${message.author} with user ID ${message.author.id}.`)
+    .addField("Channel", message.channel)
+    .addField("Time", message.createdAt)
+    .addField("Reason", reason);
 
-    cooldown.add(msg.author.id && msg.guild.id);
-    setTimeout(() => {
-        cooldown.delete(msg.author.id && msg.guild.id);
-    }, 300000);
     let reportschannel = message.guild.channels.find(`name`, "tickets");
-    let guild = msg.guild;
-    const cnl = bot.channels.get('421569960029192202');
-    msg.reply(`Hey, ${msg.author}, we got your report! We will reply soon as possible! Here is the full ticket:`);
-    const embed2 = new Discord.RichEmbed()
-  .setAuthor(`Ticket from ${msg.author.tag}`, msg.author.displayAvatarURL)
-  .addField('Ticket:', `**Tickets's Author:** ${msg.author.tag}\n**Server:** ${guild.name}\n**Full ticket:** ${args}`)
-  .setThumbnail(msg.author.displayAvatarURL)
-  .setFooter(`${moment().format('MMMM Do YYYY, h:mm:ss a')}`)
-  .setColor(16711728);
-    msg.channel.send({embed: embed2});
-    const embed = new Discord.RichEmbed()
-  .setAuthor(`Ticket from ${msg.author.tag}`, msg.author.displayAvatarURL)
-  .addField('Ticket:', `**Report's Author:** ${msg.author.tag}\n**Server:** ${guild.name}\n**Full report:** ${args}`)
-  .setThumbnail(msg.author.displayAvatarURL)
-  .setColor("#ffd700");
-    cnl.send({embed})
-  .catch(e => logger.error(e))
-};
+    if(!reportschannel) return message.channel.send("Couldn't locate a tickets channel. Please contact a server manager. The channel must be named: `tickets`.")
+
+        message.delete().catch(O_o=>{});
+        reportschannel.send(reportEmbed)
+        if(reportschannel) return message.channel.send("Ticket sent, thanks!")
+
+}
 
 module.exports.help = {
-    name: 'Ticket'
-};
+    name: "ticket"
+
+}
