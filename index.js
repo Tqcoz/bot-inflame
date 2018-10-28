@@ -65,7 +65,7 @@ bot.on("message", async message => {
   let coinEmbed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
   .setColor("#14b87e")
-  .addField("💸", `${coinAmt} coins added!`);
+  .addField("💸", `**${cUser}** just gained ${coinAmt} coins for chatting in InflameMC's Discord server!`);
 
   message.channel.send(coinEmbed).then(msg => {msg.delete(5000)});
   }
