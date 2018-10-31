@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args) => {
           message.channel.send('Happy Halloween ' + (message.author.username) 👻');
           message.react('🎃');
           
-      };
+      });
       
 }
 
