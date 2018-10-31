@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args) => {
         if(message.content.startsWith(prefix)) return;
           message.channel.send('Happy Halloween ' + (message.author.username) + ' :ghost:' );
           message.react('🎃');
-          message.author.send('You thought that was the only boring thing I was gonna send to you' + message.author.username + message.author.discriminator + '? ' + 'Well if you did you are wrong!');
+          message.edit('This Halloween is gonna haunt you for ever! I have a dig bick!');
     }  
 module.exports.help = {
   name: "halloween"
