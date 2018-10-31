@@ -1,7 +1,7 @@
 const Disc = require('discord.js');
 const readline = require('readline');
 
-module.exports.run = async (bot, message, args, function(message)) => {
+module.exports.run = async (bot, message, args) => {
      if(message.channel.type === 'dm'){
         console.log("[" + message.author.username + "]: " + message.content) //Message from : Message
         
