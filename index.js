@@ -39,7 +39,10 @@ bot.on("message", async message => {
   if(message.channel.type === "dm") return;
 
   if(!message.author.id === '411590727441580032') return;
-    message.react('🙂');
+    message.react('🔥');
+  if(message.content === 'InflameMC is nice!') return;
+    message.react('❤');
+    message.reply('No, You are nice! Thanks ' + message.author.username)
   
   let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
   if(!prefixes[message.guild.id]){
