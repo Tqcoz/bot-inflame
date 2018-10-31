@@ -4,7 +4,7 @@ const prefix = ".";
 module.exports.run = async (bot, message, args) => {
 
       if(!message.content.startsWith(prefix)) return;
-         dmchannel.author.send(invite.url);
+         dm.author.send(invite.url);
 
 }
 
