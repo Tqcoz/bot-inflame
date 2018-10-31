@@ -108,10 +108,6 @@ bot.on("message", async message => {
   }
 
 
-  if (message.author.id !== '221221226561929217') return;
-  message.react('🙂');
-  message.react('🆒');
-    
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
