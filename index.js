@@ -8,7 +8,7 @@ let xp = require("./xp.json");
 let purple = botconfig.purple;
 let cooldown = new Set();
 let cdseconds = 5;
-let log = message.guild.channels.find(`name`, "bot-log");
+log = message.guild.channels.find(`name`, "bot-log");
 fs.readdir("./commands/", (err, files) => {
 
   if(err) console.log(err);
