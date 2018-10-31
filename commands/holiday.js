@@ -3,7 +3,7 @@ const prefix = ".";
 module.exports.run = async (bot, message, args) => {
 
         if(message.content.startsWith(prefix)) { 
-          message.channel.send('Happy Halloween ' + (message.author.username) + '👻');
+          message.channel.send('Happy Halloween ' + (message.author.username) + (message.emoji('👻'));
           message.react('🎃');
         }
     }  
