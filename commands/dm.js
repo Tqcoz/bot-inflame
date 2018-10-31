@@ -2,7 +2,7 @@ const Disc = require('discord.js');
 const readline = require('readline');
 
 
-if(message.channel.type === 'dm'){
+     if(message.channel.type === 'dm'){
         console.log("[" + message.author.username + "]: " + message.content) //Message from : Message
         
         const rl = readline.createInterface({
