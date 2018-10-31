@@ -4,7 +4,7 @@ module.exports.run = async (bot, message, args) => {
 
     if(message.author.hasPermission === ('ADMINISTRATOR')) return;
        message.channel.send('Restarting!'); 
-       heroku ps:restart;
+       process.exit(0);
 
 }
 
