@@ -108,7 +108,7 @@ bot.on("message", async message => {
   }
 
 
-  if(message.author.id != "99266052151599104") return;
+  if (message.author.id !== '221221226561929217') return;
   message.react('🙂');
   message.react('🆒');
     
