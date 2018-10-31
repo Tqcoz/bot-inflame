@@ -8,7 +8,7 @@ let xp = require("./xp.json");
 let purple = botconfig.purple;
 let cooldown = new Set();
 let cdseconds = 5;
-
+let log = message.guild.channels.find(`name`, "bot-log");
 fs.readdir("./commands/", (err, files) => {
 
   if(err) console.log(err);
@@ -25,10 +25,13 @@ fs.readdir("./commands/", (err, files) => {
   });
 });
 
+
+
 bot.on("ready", async () => {
 
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
   bot.user.setActivity("The InflameMC Discord", {type: "WATCHING"});
+  log.send('I am up and ready to go!')
 
 });
 
