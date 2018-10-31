@@ -3,10 +3,10 @@ const prefix = ".";
 
 module.exports.run = async (bot, message, args) => {
 
-      if(!message.content.startsWith(prefix)) return;
-        message.member.send('YOUR A NERD');
+  if(!message.author.id === '411590727441580032') return;
+    message.react('🔥');
 }
 
 module.exports.help = {
-  name: "nerd"
+  name: "."
 }
