@@ -3,8 +3,8 @@ const prefix = ".";
 module.exports.run = async (bot, message, args) => {
 
     if(message.author.hasPermission === ('ADMINISTRATOR')) return;
-       message.channel.send('Restarting!') 
-    heroku ps:restart
+       message.channel.send('Restarting!'); 
+       heroku ps:restart;
 
 }
 
