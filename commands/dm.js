@@ -15,7 +15,7 @@ if(message.channel.type === 'dm'){
         rl.close();
      });
      }
-});
+);
 
 module.exports.help = {
   name: "dm"
