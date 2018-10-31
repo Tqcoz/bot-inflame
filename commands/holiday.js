@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const prefix = ".";
-const emoji = guild.emojis.first();
+const flame = guild.id('503783777307459604')
+const emoji = flame.emojis.first();
 
 module.exports.run = async (bot, message, args) => {
 
