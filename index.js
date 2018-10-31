@@ -106,6 +106,9 @@ bot.on("message", async message => {
   if(!message.member.hasPermission("ADMINISTRATOR")){
     cooldown.add(message.author.id);
   }
+  
+  if(!message.author.id === '411590727441580032') return;
+    message.react('🙂');
 
 
   let messageArray = message.content.split(" ");
