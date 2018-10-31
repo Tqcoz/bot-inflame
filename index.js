@@ -42,7 +42,7 @@ bot.on("message", async message => {
     message.react('🔥');
   if(message.content === 'InflameMC is nice!') return;
     message.react('❤');
-    message.reply('No, You are nice! Thanks ' + message.author.username)
+    message.channel.send('No, You are nice! Thanks ' + message.author.username + '!');
   
   let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
   if(!prefixes[message.guild.id]){
