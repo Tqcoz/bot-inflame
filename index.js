@@ -30,7 +30,6 @@ bot.on("ready", async () => {
 
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
   bot.user.setActivity("The InflameMC Discord", {type: "WATCHING"});
-  message.guilds.channel('log').send('I am up and ready to go!')
 
 });
 
