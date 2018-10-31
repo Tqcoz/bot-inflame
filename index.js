@@ -9,9 +9,6 @@ let purple = botconfig.purple;
 let cooldown = new Set();
 let cdseconds = 5;
 
-      if(!message.author.id === '411590727441580032') return;
-         message.react('🙂');
-
 fs.readdir("./commands/", (err, files) => {
 
   if(err) console.log(err);
