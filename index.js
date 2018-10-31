@@ -41,13 +41,6 @@ bot.on("message", async message => {
   if(!message.author.id === '411590727441580032') return;
     message.react('🔥');
   
-  if(message.channel.id === '503814751139135509') return;
-    message.react('😍');
-    message.react('🇭');
-    message.react('🇾');
-    message.react('🇵');
-    message.react('🇪');
-  
   let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
   if(!prefixes[message.guild.id]){
     prefixes[message.guild.id] = {
