@@ -1,10 +1,11 @@
 const Discord = require("discord.js");
 
-let sicon = message.guild.iconURL;
+
 
 module.exports.run = async (bot, message, args,) => {
 const channel = member.guild.channels.find(ch => ch.name === 'bot-spam');
-
+let sicon = message.guild.iconURL;
+  
   if (!channel) return;
   channel.send(`Sup, ${member}`);
   channel.send(`OH WOW, ${member} just joined **InflameMC** PROPS TO HIM!`);
