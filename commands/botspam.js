@@ -1,9 +1,9 @@
 const Discord = require("discord.js");
-const channel = member.guild.channels.find(ch => ch.name === 'bot-spam');
+
 let sicon = message.guild.iconURL;
 
-module.exports.run = async (bot, message, args) => {
-
+module.exports.run = async (bot, message, args,) => {
+const channel = member.guild.channels.find(ch => ch.name === 'bot-spam');
 
   if (!channel) return;
   channel.send(`Sup, ${member}`);
