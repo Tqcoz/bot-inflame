@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args) => {
 
     if(!message.content.startsWith(prefix)) return ;
     if(!message.author.hasPermission === ('ADMINISTRATOR')) return ;
-    msg.delete();
+      message.channel.bulkDelete(1).then(() => {
     let updateMsg = args[0];
     let gitUpdateEmbed = new Discord.RichEmbed()
     .setDescription(":arrow_up: **New GitHub Update** :arrow_up:")
@@ -17,7 +17,7 @@ module.exports.run = async (bot, message, args) => {
     
     
     message.channel.send(gitUpdateEmbed);
-
+      });
 }
 
 module.exports.help = {
