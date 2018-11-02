@@ -5,6 +5,7 @@ module.exports.run = async (bot, message, args) => {
 
     if(!message.content.startsWith(prefix)) return ;
     if(!message.author.hasPermission === ('ADMINISTRATOR')) return ;
+    msg.delete();
     let updateMsg = args[0];
     let gitUpdateEmbed = new Discord.RichEmbed()
     .setDescription(":arrow_up: **New GitHub Update** :arrow_up:")
