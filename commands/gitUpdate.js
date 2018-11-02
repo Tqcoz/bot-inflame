@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args) => {
     let gitUpdateEmbed = new Discord.RichEmbed()
     .setDescription(":arrow_up: **New GitHub Update** :arrow_up:")
     .setTitle("Our GitHub Page")
-    .addField("Update:", updateMsg)
+    .addField("Update:", updateMsg -- updater)
     .setColor("#228B22")
     .setThumbnail("http://pluspng.com/img-png/github-octocat-logo-vector-png-png-ico-icns-svg-more-512.png")
     .setURL("https://github.com/Tqcoz/inflame-bot")
