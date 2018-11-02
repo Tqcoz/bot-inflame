@@ -9,5 +9,5 @@ module.exports.run = async (bot, message, args) => {
           message.edit('This Halloween is gonna haunt you for ever! I have a dig bick!');
     }  
 module.exports.help = {
-  name: "halloween"
+  name: "holiday"
 }
