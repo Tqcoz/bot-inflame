@@ -19,7 +19,6 @@ module.exports.run = async (bot, message, args) => {
           CONNECT: false,
           SPEAK: false
         });
-      });
     }catch(e){
       console.log(e.stack);
     }
