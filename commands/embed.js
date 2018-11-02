@@ -3,9 +3,9 @@ module.exports.run = (client, msg, args) => {
   msg.channel.bulkDelete(1).then(() => {
     
   let embedContent = args.join(" ");
-  const embed = new Discord.MessageEmbed()
+  const embed = new Discord.RichEmbed()
     .setDescription(embedContent)
-    .setColor(["#f575a0"]);
+    .setColor("#f575a0");
   msg.channel.send(embed);
   });
 }
