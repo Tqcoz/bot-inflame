@@ -11,3 +11,7 @@ let islandEmbed = new discord.RichEmbed()
 message.channel.send(islandEmbed);
 
 }
+
+module.exports.help = {
+  name: "island"
+}
