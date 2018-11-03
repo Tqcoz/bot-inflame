@@ -29,7 +29,7 @@ fs.readdir("./commands/", (err, files) => {
 bot.on("ready", async () => {
 
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
-  bot.user.setActivity("The InflameMC Discord", {type: "WATCHING"});
+  bot.user.setActivity("an Island far away!", {type: "WATCHING"});
 
 });
 
