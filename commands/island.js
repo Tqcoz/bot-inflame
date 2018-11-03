@@ -7,6 +7,8 @@ let islandEmbed = new discord.RichEmbed()
 .setTitle("Invite Island to your server!")
 .setDescription(":island: **Check out our public bot, __Island__!** :island:")
 .setFooter("Made, once again, by pvpar#0001 with help from Vixel#6105.")
+.setURL("http://great.social/inviteIS")
+.setColor("#006400");
 
 message.channel.send(islandEmbed);
 
