@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-module.exports.run = (client, msg, args) => {
+module.exports.run = (client, bot, msg, args, message) => {
   msg.channel.bulkDelete(1).then(() => {
     
   let embedContent = args.join(" ");
