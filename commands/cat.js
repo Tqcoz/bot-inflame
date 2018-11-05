@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const fs = require("fs");
 const coins = require("../coins.json");
-const prefix = ">";
+const prefix = ".";
 const superAgent = require("superagent");
 
 module.exports.run = async (bot, message, args) => {
