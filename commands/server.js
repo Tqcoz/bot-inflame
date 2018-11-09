@@ -7,7 +7,7 @@ module.exports.run = async (client, message, args) => {
             color: 0xDF9C9D,
             author: {
                 name: message.author.username,
-                icon_url: client.user.displayAvatarURL()
+                icon_url: message.author.displayAvatarURL()
             },
             thumbnail: {
                 url: message.guild.iconURL()
