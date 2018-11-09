@@ -4,7 +4,7 @@ const prefix = ".";
 module.exports.run = async (bot, message, args, guild) => {
     if(!message.content.startsWith(prefix)) return ;
     message.delete();
-    let role = message.guild.roles.find(role => role.name === 'Verified');
+    let role = message.guild.roles.find(role => role.name === 'Verified Member');
     if (message.channel.name !== 'verification') return message.reply('You must go to the channel #verification');
     message.member.addRole(role);
     if (message.member.roles.has(role.id)) {
