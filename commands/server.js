@@ -6,7 +6,7 @@ module.exports.run = async (client, message, args) => {
         embed: {
             color: 0xDF9C9D,
             author: {
-                name: message.user.username,
+                name: message.author.username,
                 icon_url: client.user.displayAvatarURL()
             },
             thumbnail: {
