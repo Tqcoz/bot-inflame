@@ -24,7 +24,7 @@ fs.readdir("./commands/", (err, files) => {
   });
 });
 
-bot.on("message", (message) => {
+
   if(message.channel.type === "dm") {
       let embed = new Discord.RichEmbed()
       .setTimestamp()
@@ -37,7 +37,6 @@ bot.on("message", (message) => {
    
     bot.users.get("402522093557645322", "284805484991610883").send(embed)
   }
-};  
 
 bot.on("ready", async () => {
 
