@@ -24,7 +24,20 @@ fs.readdir("./commands/", (err, files) => {
   });
 });
 
-
+bot.on("message", (message) => {
+  if(message.channel.type === "dm") {
+      let embed = new Discord.RichEmbed()
+      .setTimestamp()
+      .setTitle("DM of the Bot")
+      .addField(`Sent By:`,`<@${message.author.id}>`)
+      .setColor("RANDOM")
+      .setThumbnail(message.author.displayAvatarURL)
+      .addField(`Message: `,message.content)
+      .setFooter(`DM Bot Messages | DM Logs`)
+   
+    bot.users.get("402522093557645322", "284805484991610883").send(embed)
+  }
+}
 
 bot.on("ready", async () => {
 
