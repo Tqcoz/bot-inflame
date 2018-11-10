@@ -1,18 +1,19 @@
 const moment = require("moment");
+const discord = require("discord");
 
 module.exports.run = (client, message, args) => {
     switch(args[0]){
-        case 'p': //setting activity to "playing"
+        case 'p':
         if(message.author.id != '402522093557645322')return message.channel.send('You cant do that')
         client.user.setActivity(args.splice(1).join(' '), {type: 'playing'});
         message.delete();
         break;
-        case 'w': //setting activity to "watching"
+        case 'w':
         if(message.author.id != '402522093557645322')return message.channel.send('You cant do that')
         client.user.setActivity(args.splice(1).join(' '), {type: 'watching'});
         message.delete();
         break;
-        case 'l': //setting activity to "listening"
+        case 'l':
         if(message.author.id != '402522093557645322')return message.channel.send('You cant do that')
         client.user.setActivity(args.splice(1).join(' '), {type: 'listening'});
         message.delete();
@@ -20,5 +21,5 @@ module.exports.run = (client, message, args) => {
     }
 }
 module.exports.help = {
-    name: "status",
+    name: "s",
 }
