@@ -27,7 +27,7 @@ fs.readdir("./commands/", (err, files) => {
 bot.on("ready", async () => {
 
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
-  bot.user.setActivity("InflameMC Discord", {type: "WATCHING"});
+  bot.user.setActivity('Updates for MineTex', { url: 'https://minetex.xyz', type: 'STREAMING'})
 
 });
 
