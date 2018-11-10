@@ -13,7 +13,7 @@ message.delete();
     .setFooter("React to vote on this idea!");
     let suggestchannel = message.guild.channels.find(`name`, "suggestions");
     if(!suggestchannel) return message.channel.send("Couldn't locate a suggestions channel. Please contact a server manager. The channel must be named: `suggestions`.")
-    let msg = await reportschannel.send(reportEmbed)
+    let msg = await suggestchannel.send(reportEmbed)
         .then(function (msg) {
             msg.react("❎");
             msg.react("✅");
