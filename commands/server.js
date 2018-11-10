@@ -20,7 +20,7 @@ module.exports.run = (client, message, args) => {
         break;
         case 'r':
         if(message.author.id != '402522093557645322')return message.channel.send('You cant do that')
-        client.user.setActivity("InflameMC Discord", {type: "WATCHING"});
+        client.user.setActivity(" the InflameMC Discord", {type: "WATCHING"});
         message.delete();
         break;
     }
