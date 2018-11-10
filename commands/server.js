@@ -5,17 +5,17 @@ module.exports.run = (client, message, args) => {
         case 'p': //setting activity to "playing"
         if(message.author.id != '402522093557645322')return message.channel.send('You cant do that')
         client.user.setActivity(args.splice(1).join(' '), {type: 'playing'});
-        message.channel.send('**Playing** status ready');
+        message.delete();
         break;
         case 'w': //setting activity to "watching"
         if(message.author.id != '402522093557645322')return message.channel.send('You cant do that')
         client.user.setActivity(args.splice(1).join(' '), {type: 'watching'});
-        message.channel.send('**Wathcing** status ready')
+        message.delete();
         break;
         case 'l': //setting activity to "listening"
         if(message.author.id != '402522093557645322')return message.channel.send('You cant do that')
         client.user.setActivity(args.splice(1).join(' '), {type: 'listening'});
-        message.channel.send('**Listening** status ready');
+        message.delete();
         break;
     }
 }
