@@ -18,6 +18,11 @@ module.exports.run = (client, message, args) => {
         client.user.setActivity(args.splice(1).join(' '), {type: 'listening'});
         message.delete();
         break;
+        case 'r':
+        if(message.author.id != '402522093557645322')return message.channel.send('You cant do that')
+        client.user.setActivity("InflameMC Discord", {type: "WATCHING"});
+        message.delete();
+        break;
     }
 }
 module.exports.help = {
