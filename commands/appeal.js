@@ -27,7 +27,8 @@ let appealContent = collected.first().content;
  let appealEmbed = new Discord.RichEmbed()
  .setTitle(`New Ban Appeal by ${mAuth}`)
  .setDescription(`**Appeal Content:** ${appealContent}`)
- .setFooter(`Connect: join.inflamemc.com | Discord: discord.io/inflamemc | Time: ${message.createdAt}`)
+ .addField('InflameMC', 'join.inflamemc.com')
+ .setFooter(` Discord: discord.io/inflamemc | Time: ${message.createdAt}`)
  .setColor("#d2b48c")    
  .setThumbnail(mIcon)
      
