@@ -1,9 +1,11 @@
 const Discord = require("discord.js");
-const prefix = "-";
+const prefix = ".";
 
 module.exports.run = async (bot, message, client, args) => {
    if(!message.content.startsWith(prefix)) return ;
    let mAuth = message.author;
+  let appeals_Channel = message.guild.channels.find(`name`, "ban-appeals");
+   if(!message.channel === appeals_Channel) return message.channel.send(":x: That's not a ban appeals channel!");
 await message.delete();
   const filter = m => m.author.id === message.author.id;
   message.channel.send("Please tell us your reason for wanting to be unbanned, including your in-game name and the moderator who banned you. You can send `cancel` at any time to cancel this appeal. __Hint:__ Use proper grammar. If your appeal is in a language other than English, it won't be reviewed.").then(q => q.delete(15000))
