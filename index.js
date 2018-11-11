@@ -27,7 +27,7 @@ fs.readdir("./commands/", (err, files) => {
 bot.on("ready", async () => {
 
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
-  bot.user.setActivity('Updates for MineTex', { url: 'https://minetex.xyz', type: 'STREAMING'})
+  bot.user.setActivity('for upcoming updates!', { url: 'https://minetex.xyz', type: 'Watching'})
 
 });
 
