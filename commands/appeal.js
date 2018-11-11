@@ -25,10 +25,10 @@ let appealContent = collected.first().content;
  if(!appealsChannel) return message.channel.send(":x: Couldn't find appeals channel.");
  
  let appealEmbed = new Discord.RichEmbed()
+ .setColor("#d2b48c");
  .setTitle(`New Ban Appeal by ${mAuth}`)
  .setDescription(`**Appeal Content:** ${appealContent}`)
  .setFooter(`Connect: join.inflamemc.com | Discord: discord.io/inflamemc | Time: ${message.createdAt}`)
- .setColor("#d2b48c");
  .setThumbnail(mIcon);
  
  appealsChannel.send(appealEmbed);
