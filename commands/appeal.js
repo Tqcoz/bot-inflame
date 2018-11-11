@@ -3,7 +3,8 @@ const prefix = ".";
 
 module.exports.run = async (bot, message, client, args) => {
    if(!message.content.startsWith(prefix)) return ;
-   let mAuth = message.author;
+   let mAuth = message.author.username;
+   let mIcon = message.author.avatarURL;
   let appeals_Channel = message.guild.channels.find(`name`, "ban-appeals");
    if(!message.channel === appeals_Channel) return message.channel.send(":x: That's not a ban appeals channel!");
 await message.delete();
@@ -28,6 +29,7 @@ let appealContent = collected.first().content;
  .setDescription(`**Appeal Content:** ${appealContent}`)
  .setFooter(`Connect: join.inflamemc.com | Discord: discord.io/inflamemc | Time: ${message.createdAt}`)
  .setColor("#d2b48c");
+ .setThumbnail(mIcon)
  
  appealsChannel.send(appealEmbed);
      message.channel.send(":ok_hand: Appeal sent! You will be contacted if your appeal is accepted!");
