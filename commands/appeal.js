@@ -5,6 +5,7 @@ module.exports.run = async (bot, message, client, args) => {
    if(!message.content.startsWith(prefix)) return ;
    let mAuth = message.author.username;
    let mIcon = message.author.avatarURL;
+   let mDiscrim = message.author.discriminator;
   let appeals_Channel = message.guild.channels.find(`name`, "ban-appeals");
    if(!message.channel === appeals_Channel) return message.channel.send(":x: That's not a ban appeals channel!");
 await message.delete();
@@ -25,7 +26,7 @@ let appealContent = collected.first().content;
  if(!appealsChannel) return message.channel.send(":x: Couldn't find appeals channel.");
  
  let appealEmbed = new Discord.RichEmbed()
- .setTitle(`New Ban Appeal by ${mAuth}`)
+ .setTitle(`New Ban Appeal by ${mAuth}${mDiscrim}`)
  .setDescription(`**Appeal Content:** ${appealContent}`)
  .addField('InflameMC', 'join.inflamemc.com')
  .setFooter(` Discord: discord.io/inflamemc | Time: ${message.createdAt}`)
