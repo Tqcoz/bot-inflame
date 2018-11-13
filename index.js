@@ -24,17 +24,6 @@ fs.readdir("./commands/", (err, files) => {
   });
 });
 
-bot.on("guildMemberAdd", member => {
-let woolcome = member.guild.channels.find("name", "welcome-spam");
-let wooCon = member.avatarURl
-  let woolcomemBed = new Discord.RichEmbed()
-  .setThumbnail(wooCon)
-  .setDescription('OMG LOOK WHO DECIDED TO JOIN! IT IS ' + member + '!')
-  .setFooter('A single death is a tragedy; a million deaths is a statistic. - Joseph Stalin')
-  .setField('VLADIMIR LENIN', 'WAS A GOOD PERSON');
-  woolcome.send(woolcomemBed);
-});
-
 bot.on("ready", async () => {
 
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
@@ -42,11 +31,23 @@ bot.on("ready", async () => {
 
 });
 
+bot.on('guildMemberAdd', member => {
+  // Send the message to a designated channel on a server:
+  const channel = member.guild.channels.find(ch => ch.name === 'member-log');
+  // Do nothing if the channel wasn't found on this server
+  if (!channel) return;
+  // Send the message, mentioning the member
+  channel.send(`Hello, ${member} Thanks for joining InflameMC! Our server has not been released yet but will release shortly.`);
+});
 
 bot.on("message", async message => {
 
   if(message.author.bot) return;
-  if(message.channel.type === "dm") return;
+  if(message.channel.type === "dm") {
+    if(message.content.startsWith('.' + 'dm')) return;
+      message.member.send('Hmm DM you asked?')
+  }  
+  
  
   
   let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
