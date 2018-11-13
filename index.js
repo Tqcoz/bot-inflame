@@ -56,6 +56,7 @@ var byecomeChannel = member.guild.channels.find(ch => ch.name === 'welcome-spam'
     .setDescription(`Bye ${member.user}, Seeya next time!`)
     .setColor("#4286f4")
     .setFooter(`We now have ${member.guild.memberCount} members!`)
+    .addField('Role', member.role.name) 
     .setTimestamp();
     byecomeChannel.send(ByemBed)
     member.send('InflameMC will miss you!')
