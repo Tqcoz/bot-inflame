@@ -43,8 +43,9 @@ var woolcomeChannel = member.guild.channels.find(ch => ch.name === 'welcome-spam
     .setFooter(`You are the ${member.guild.memberCount} member to joined.`)
     .addField('Release Time', 'Nov 28th, 2018 | 6PM EST')
     .setTimestamp();
-    woolcomeChannel.send(WelcomeEmbed)
-  } 
+    woolcomeChannel.send(WelcomeEmbed) 
+  }
+});  
 
 bot.on("message", async message => {
 
