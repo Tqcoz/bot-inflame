@@ -27,7 +27,7 @@ fs.readdir("./commands/", (err, files) => {
 bot.on("GuildMemberAdd", member => {
 let woolcome = member.guild.channels.find("name", "welcome-spam");
   woolcome.send('OMG LOOK WHO JOINED, IT IS ${member}!')
-}
+});
 
 bot.on("ready", async () => {
 
