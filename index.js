@@ -31,6 +31,15 @@ bot.on("ready", async () => {
 
 });
 
+bot.on('channelCreate', async channel => {
+
+  console.log(`${channel.name} has been created.`);
+
+if (channel.type != 'text') return;
+  let sChannel = channel.guild.channels.find(ch => ch.name === 'log');
+  sChannel.send(`The channel ${channel} has been created`);
+
+});
 
 bot.on("guildMemberAdd", member => {
 var woolcomeChannel = member.guild.channels.find(ch => ch.name === 'welcome-spam');
