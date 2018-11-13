@@ -27,11 +27,12 @@ fs.readdir("./commands/", (err, files) => {
 bot.on("guildMemberAdd", member => {
 let woolcome = member.guild.channels.find("name", "welcome-spam");
 let wooCon = member.avatarURl
-  let woolcomeBed = new Discord.RichEmbed
+  let woolcomemBed = new Discord.RichEmbed
   .setThumbnail(wooCon)
   .setDescription('OMG LOOK WHO DECIDED TO JOIN! IT IS ' + member + '!')
   .setFooter('A single death is a tragedy; a million deaths is a statistic. - Joseph Stalin')
   .setField('VLADIMIR LENIN', 'WAS A GOOD PERSON')
+  woolcome.send(woolcomemBed)
 });
 
 bot.on("ready", async () => {
