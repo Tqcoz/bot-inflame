@@ -33,7 +33,7 @@ bot.on("ready", async () => {
 
 
 bot.on("guildMemberAdd", member => {
-var woolcomeChannel = member.guild.channels.find('name', 'welcome-spam');  
+var woolcomeChannel = member.guild.channels.find(ch => ch.name === 'welcome-spam');
   if (woolcomeChannel) {
      let WelcomeEmbed = new Discord.RichEmbed()
     .setTitle("Member has joined!")
