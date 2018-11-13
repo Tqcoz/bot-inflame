@@ -45,7 +45,6 @@ var woolcomeChannel = member.guild.channels.find(ch => ch.name === 'welcome-spam
     .setTimestamp();
     woolcomeChannel.send(WelcomeEmbed)
   } 
-}
 
 bot.on("message", async message => {
 
