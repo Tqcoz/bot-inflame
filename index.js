@@ -31,14 +31,21 @@ bot.on("ready", async () => {
 
 });
 
-bot.on('guildMemberAdd', member => {
-  // Send the message to a designated channel on a server:
-  const channel = member.guild.channels.find(ch => ch.name === 'member-log');
-  // Do nothing if the channel wasn't found on this server
-  if (!channel) return;
-  // Send the message, mentioning the member
-  channel.send(`Hello, ${member} Thanks for joining InflameMC! Our server has not been released yet but will release shortly.`);
-});
+
+bot.on("guildMemberAdd", member => {
+var woolcomeChannel = member.guild.channels.find('name', 'welcome-spam');  
+  if (woolcomeChannel) {
+     let WelcomeEmbed = new Discord.RichEmbed()
+    .setTitle("Member has joined!")
+    .setThumbnail(member.user.displayAvatarURL)
+    .setDescription(`Welcome ${member} to InflameMC Public Discord, \nPlease follow the rules \n and I hope you adore your stay here!`)
+    .setColor("#4286f4")
+    .setFooter(`You are the ${member.guild.memberCount} member to joined.`)
+    .addField('Release Time', 'Nov 28th, 2018 | 6PM EST')
+    .setTimestamp();
+    woolcomeChannel.send(WelcomeEmbed)
+  } 
+}
 
 bot.on("message", async message => {
 
