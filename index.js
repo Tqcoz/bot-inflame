@@ -45,6 +45,21 @@ var woolcomeChannel = member.guild.channels.find(ch => ch.name === 'welcome-spam
     .setTimestamp();
     woolcomeChannel.send(WelcomeEmbed) 
   }
+});
+
+bot.on("guildMemberRemove", member => {
+var byecomeChannel = member.guild.channels.find(ch => ch.name === 'welcome-spam');
+  if (byecomeChannel) {
+     let ByemBed = new Discord.RichEmbed()
+    .setTitle("Member has left!")
+    .setThumbnail(member.user.displayAvatarURL)
+    .setDescription(`Bye ${member.user}, Seeya next time!`)
+    .setColor("#4286f4")
+    .setFooter(`We now have ${member.guild.memberCount} members!`)
+    .setTimestamp();
+    byecomeChannel.send(ByemBed)
+    member.send('InflameMC will miss you!')
+  }
 });  
 
 bot.on("message", async message => {
