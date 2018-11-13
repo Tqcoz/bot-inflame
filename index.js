@@ -24,6 +24,11 @@ fs.readdir("./commands/", (err, files) => {
   });
 });
 
+bot.on("GuildMemberAdd", member => {
+let woolcome = member.guild.channels.find(ch => ch.name === "welcome-spam");
+  woolcome.send('OMG LOOK WHO JOINED, IT IS ${member}!')
+}
+
 bot.on("ready", async () => {
 
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
