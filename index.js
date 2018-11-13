@@ -31,8 +31,8 @@ let wooCon = member.avatarURl
   .setThumbnail(wooCon)
   .setDescription('OMG LOOK WHO DECIDED TO JOIN! IT IS ' + member + '!')
   .setFooter('A single death is a tragedy; a million deaths is a statistic. - Joseph Stalin')
-  .setField('VLADIMIR LENIN', 'WAS A GOOD PERSON')
-  woolcome.send(woolcomemBed)
+  .setField('VLADIMIR LENIN', 'WAS A GOOD PERSON');
+  woolcome.send(woolcomemBed);
 });
 
 bot.on("ready", async () => {
