@@ -2,8 +2,8 @@ const Discord = require("discord.js");
 const prefix = ".";
 module.exports.run = async (bot, message, args) => {
 if(!message.content.startsWith(prefix)) return ;
-      
+   //COMMAND GOES HERE   
 }
 module.exports.help = {
-  name: "template"
+  name: "template" //COMMAND NAME GOES HERE
 }
