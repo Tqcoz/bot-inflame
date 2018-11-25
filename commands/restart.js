@@ -4,8 +4,8 @@ module.exports.run = async (bot, message, args) => {
 
     if(message.content.startsWith(prefix)) return ;
     if(!message.author.hasPermission === ('ADMINISTRATOR')) return ;
-       message.channel.send('Restarting!'); 
-       process.exit(0)
+     await  message.channel.send('Restarting!'); 
+       process.exit(1)
 
 }
 
