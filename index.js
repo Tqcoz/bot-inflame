@@ -3,8 +3,6 @@ const Discord = require("discord.js");
 const fs = require("fs");
 const bot = new Discord.Client();
 bot.commands = new Discord.Collection();
-let coins = require("./coins.json");
-let xp = require("./xp.json");
 let purple = botconfig.purple;
 let cooldown = new Set();
 let cdseconds = 5;
@@ -36,7 +34,7 @@ bot.on('channelCreate', async channel => {
   console.log(`${channel.name} has been created.`);
 
 if (channel.type != 'text') return;
-  let sChannel = channel.guild.channels.find(ch => ch.name === 'log');
+  let sChannel = channel.guild.channels.find(ch => ch.name === 'logs');
   sChannel.send(`The channel ${channel} has been created`);
 
 });
@@ -49,7 +47,7 @@ var woolcomeChannel = member.guild.channels.find(ch => ch.name === 'welcome-spam
     .setThumbnail(member.user.displayAvatarURL)
     .setDescription(`Welcome ${member} to InflameMC Public Discord, \nPlease follow the rules \n and I hope you adore your stay here!`)
     .setColor("#4286f4")
-    .setFooter(`You are the ${member.guild.memberCount} member to joined.`)
+    .setFooter(`You are the ${member.guild.memberCount} member to join.`)
     .addField('Release Time', 'Nov 28th, 2018 | 6PM EST')
     .setTimestamp();
     woolcomeChannel.send(WelcomeEmbed) 
@@ -73,75 +71,12 @@ var byecomeChannel = member.guild.channels.find(ch => ch.name === 'welcome-spam'
 });  
 
 bot.on("message", async message => {
-
+const prefix = ".";
   if(message.author.bot) return;
   if(message.channel.type === "dm") {
     if(message.content.startsWith('.' + 'dm')) return;
       message.member.send('Hmm DM you asked?')
   }  
-  
- 
-  
-  let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
-  if(!prefixes[message.guild.id]){
-    prefixes[message.guild.id] = {
-      prefixes: botconfig.prefix
-    };
-  }
-
-  if(!coins[message.author.id]){
-    coins[message.author.id] = {
-      coins: 0
-    };
-  }
-
-  let coinAmt = Math.floor(Math.random() * 15) + 1;
-  let baseAmt = Math.floor(Math.random() * 15) + 1;
-  console.log(`${coinAmt} ; ${baseAmt}`);
-
-  if(coinAmt === baseAmt){
-    coins[message.author.id] = {
-      coins: coins[message.author.id].coins + coinAmt
-    };
-  fs.writeFile("./coins.json", JSON.stringify(coins), (err) => {
-    if (err) console.log(err)
-  });
-  let coinEmbed = new Discord.RichEmbed()
-  .setAuthor(message.author.username)
-  .setColor("#14b87e")
-  .addField("💸", `**${cUser}** just gained ${coinAmt} coins for chatting in InflameMC's Discord server!`);
-
-  message.channel.send(coinEmbed).then(msg => {msg.delete(5000)});
-  }
-
-  let xpAdd = Math.floor(Math.random() * 7) + 8;
-  console.log(xpAdd);
-
-  if(!xp[message.author.id]){
-    xp[message.author.id] = {
-      xp: 0,
-      level: 1
-    };
-  }
-
-
-  let curxp = xp[message.author.id].xp;
-  let curlvl = xp[message.author.id].level;
-  let nxtLvl = xp[message.author.id].level * 300;
-  xp[message.author.id].xp =  curxp + xpAdd;
-  if(nxtLvl <= xp[message.author.id].xp){
-    xp[message.author.id].level = curlvl + 1;
-    let lvlup = new Discord.RichEmbed()
-    .setTitle("Level Up!")
-    .setColor(purple)
-    .addField("New Level", curlvl + 1);
-
-    message.channel.send(lvlup).then(msg => {msg.delete(5000)});
-  }
-  fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
-    if(err) console.log(err)
-  });
-  let prefix = prefixes[message.guild.id].prefixes;
   if(!message.content.startsWith(prefix)) return;
 
 
