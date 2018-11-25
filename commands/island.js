@@ -1,5 +1,5 @@
 const discord = require("discord.js");
-const prefix = "^";
+const prefix = ".";
 
 module.exports.run = async (bot, message, args) => {
 
