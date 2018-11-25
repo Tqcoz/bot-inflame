@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const prefix = "!";
+const prefix = ".";
 
 module.exports.run = async (bot, message, client, args) => {
  if(!message.content.startsWith(prefix)) return ;   
