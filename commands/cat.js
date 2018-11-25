@@ -5,7 +5,6 @@ const superAgent = require("superagent");
 
 module.exports.run = async (bot, message, args) => {
     if(!message.content.startsWith(prefix)) return ;
-       if(message.author.id === vix) return message.channel.send("You don't get cats.");
     let {body} = await superAgent
     .get(`http://aws.random.cat//meow`);
     
