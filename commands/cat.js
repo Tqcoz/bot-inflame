@@ -1,6 +1,5 @@
 const Discord = require("discord.js");
 const fs = require("fs");
-const coins = require("../coins.json");
 const prefix = ".";
 const superAgent = require("superagent");
 
