@@ -4,7 +4,7 @@ const prefix = ".";
 
 module.exports.run = async (bot, message, args) => {
     if(!message.content.startsWith(prefix)) return ;
-let section = args[1];
+let section = args[0];
    if(!section) {
        let baseHelpEmbed = new Discord.RichEmbed()
        .setDescription("**Inflame Bot Help**")
