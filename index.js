@@ -1,10 +1,16 @@
 const botconfig = require("./botconfig.json");
 const Discord = require("discord.js");
 const fs = require("fs");
+const YouTube = require('simple-youtube-api');
+const ytdl = require('ytdl-core');
+const youtube = new YouTube("AIzaSyAfIu0OjJtPz4-lpYtR-zTYvipNcnMist4");
 const bot = new Discord.Client();
 bot.commands = new Discord.Collection();
 let purple = botconfig.purple;
 let cooldown = new Set();
+const queue = new Map();
+const opusscript = require("opusscript");
+const servers = {};
 let cdseconds = 5;
 fs.readdir("./commands/", (err, files) => {
 
