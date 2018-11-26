@@ -37,7 +37,7 @@ let section = args[1];
         let serverHelpEmbed = new Discord.RichEmbed()
         .setFooter("Use .help to go back to the main help page.")
         .setColor("#0a0a0a")
-        .addField(":notepad_spiral: Server Help", "suggest [suggestion], appeal, credits, help, island, ping, retell, new [@staff_member] [ticket_content], verify");
+        .addField(":notepad_spiral: Server Help", "stats, suggest [suggestion], appeal, credits, help, island, ping, retell, new [@staff_member] [ticket_content], verify");
         
         message.channel.send(serverHelpEmbed);
     };
