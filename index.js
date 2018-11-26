@@ -88,7 +88,7 @@ const prefix = ".";
 
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0];
-  let args = messageArray.slice(1);
+const args = message.content.substring(prefix.length).split(" ");
  var searchString = args.slice(1).join(' ');
 	var url = args[1] ? args[1].replace(/<(.+)>/g, '$1') : '';
 	var serverQueue = queue.get(message.guild.id);
