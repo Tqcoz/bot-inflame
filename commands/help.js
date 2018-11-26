@@ -22,20 +22,20 @@ let section = args[1];
      if(section === "fun") {
         let funHelpEmbed = new Discord.RichEmbed()
         .addField(":smile: Fun Help", "bird, dog, cat, dogfact, catfact, cowsay, fcookie, clout, embed [message], holiday")
-        .setFooter("Use /help to go back to the main help page.")
+        .setFooter("Use .help to go back to the main help page.")
         .setColor("#0000f0");
             message.channel.send(funHelpEmbed);
     };
      if(section === "music") {
         let musicHelpEmbed = new Discord.RichEmbed()
-        .setFooter("Use /help to go back to the main help page.")
+        .setFooter("Use .help to go back to the main help page.")
         .setColor("#00f0f0")
         .addField(":musical_note: Music Help", "play [search/link], pause, skip, queue, stop, nowplaying, volume [requested_volume], resume");
         message.channel.send(musicHelpEmbed);
     };
      if(section === "server") {
         let serverHelpEmbed = new Discord.RichEmbed()
-        .setFooter("Use /help to go back to the main help page.")
+        .setFooter("Use .help to go back to the main help page.")
         .setColor("#0a0a0a")
         .addField(":notepad_spiral: Server Help", "suggest [suggestion], appeal, credits, help, island, ping, retell, new [@staff_member] [ticket_content], verify");
         
@@ -43,7 +43,7 @@ let section = args[1];
     };
     if(section === "mod") {
         let modHelpEmbed = new Discord.RichEmbed()
-        .setFooter("Use /help to go back to the main help page.")
+        .setFooter("Use .help to go back to the main help page.")
         .setColor("#bb0f0e")
         .addField(":warning: Moderation Help", "ban [user] {reason}, kick [user] {reason}, unban [user], mute [user] [time], purge [number]");
         
@@ -51,7 +51,7 @@ let section = args[1];
     };
      if(section === "dev") {
         let modHelpEmbed = new Discord.RichEmbed()
-        .setFooter("Use /help to go back to the main help page.")
+        .setFooter("Use .help to go back to the main help page.")
         .setColor("#8B008B")
         .addField(":computer: Developer Help", "restart, gitUpdate [update_msg]");
         
