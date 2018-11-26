@@ -4,7 +4,7 @@ const prefix = ".";
 module.exports.run = async (bot, message, args) => {
     if(!message.content.startsWith(prefix)) return ;
     let reason = args.join(" ");
-message.delete();
+await message.delete();
     let reportEmbed = new discord.RichEmbed()
     .setTitle("**New Suggestion**")
     .setColor("#009fff")
