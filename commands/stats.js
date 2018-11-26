@@ -18,7 +18,7 @@ if(!message.content.startsWith(prefix)) return ;
         .addField(`🎭 Member Status`, `${online} **Online:** ${server.members.filter(m => m.user.presence.status === "online").size}\n${idle} **Idle:** ${server.members.filter(m => m.user.presence.status === "idle").size}\n${dnd} **DND:** ${server.members.filter(m => m.user.presence.status === "dnd").size}\n${offline} **Offline / Invisible:** ${server.members.filter(m => m.user.presence.status === "offline").size}`, true)
         .addField(`:clipboard: Roles`, `**Total Roles:** ${message.guild.roles.size}\n\n` + message.guild.roles.filter(role => role.id !== message.guild.id).map(role => `<@&${role.id}>`).join(" | ") + "\n\u200b", true)
         .addField(`😃 Emojis`, `**Total Emojis:** ${message.guild.emojis.size}\n\n` + message.guild.emojis.map(e => e).join(' | '))
-        .setColor(color)
+        .setColor("#f0e0f0")
         .setTimestamp()
         .setFooter(`Server ID : ${server.id}`)
     
