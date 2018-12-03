@@ -3,7 +3,8 @@ const discord = require("discord.js");
 const prefix = ".";
 module.exports.run = async (bot, message, args) => {
     if(!message.content.startsWith(prefix)) return ;
-    let reason = args.join(" ");
+    let reason = args.join(" ").slice(7);
+    if(!reason) return message.channel.send("Please put suggestion content after the command!");
 await message.delete();
     let reportEmbed = new discord.RichEmbed()
     .setTitle("**New Suggestion**")
