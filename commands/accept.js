@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, client, args) => {
    if(!message.content.startsWith(prefix)) return ;
    if(!message.member.hasPermission("ADMINISTRATOR")) return ;
    
-let aUser = args[1];
+let aUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
 let contentyay = args.join(" ").slice(28);
 
 let embed = new Discord.RichEmbed()
