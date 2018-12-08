@@ -93,6 +93,9 @@ const args = message.content.substring(prefix.length).split(" ");
 	var url = args[1] ? args[1].replace(/<(.+)>/g, '$1') : '';
 	var serverQueue = queue.get(message.guild.id);
     switch (args[0].toLowerCase()) {
+	    case "test":
+	message.author.send("Thanks for testing!");
+		    break;
       case "play":
     var voiceChannel = message.member.voiceChannel;
 		if (!voiceChannel) return message.channel.send('I\'m sorry but you need to be in a voice channel to play music!');
