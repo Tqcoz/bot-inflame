@@ -84,7 +84,6 @@ const prefix = ".";
       message.member.send('Hmm DM you asked?')
   }  
   if(!message.content.startsWith(prefix)) return;
-if(message.author.id === "402522093557645322") return message.channel.send("No music for you.");
 
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0];
