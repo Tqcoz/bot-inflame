@@ -14,6 +14,7 @@ if(!message.content.startsWith(prefix)) return;
     .setFooter("Coded by @pvpar#0001 and Vixel#0666")
     .setURL("https://github.com/Tqcoz/bot-inflame")
     .setColor("#123abc");
+   message.author.send(content)
  }
 }
 module.exports.help = {
