@@ -93,7 +93,9 @@ const args = message.content.substring(prefix.length).split(" ");
 	var serverQueue = queue.get(message.guild.id);
     switch (args[0].toLowerCase()) {
 	    case "test":
-	message.author.send("Thanks for testing!");
+		    let randEmb = new Discord.RichEmbed()
+		    .setDescription("Ty for testijng bruv");
+	message.author.send(randEmb);
 		    break;
       case "play":
     var voiceChannel = message.member.voiceChannel;
