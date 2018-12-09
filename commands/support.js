@@ -16,13 +16,15 @@ module.exports.run = async (bot, message, args) => {
         return message.reply("Canceled.");
       }
   let appealContent = collected.first().content;
-  let supportEmbed = new Discord.RichEmbed()
+  const supportEmbed = new Discord.RichEmbed()
   .setDescription(`**SUPPORT QUESTION:**
   
   ${appealContent}
   
-  Please reply to this person as soon as possible via ".message".`)
-
+  Please reply to this person as soon as possible via ".message".`);
+  message.channel.send("We'll respond soon! Thanks!");
+  let lolchan = message.guild.channels.find(`name`, "supports");
+  lolchan.send(supportEmbed);
       }).catch(err => {
       message.reply("Cancelled...").then(r => r.delete(5000));
       console.log("Time exceeded. Message await cancelled.");
