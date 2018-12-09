@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
     const filter = m => m.author.id === message.author.id;
     message.member.send("What do you need help with? You can send `cancel` at any time to cancel this appeal. __Hint:__ Use proper grammar. If your question is in a language other than English, it won't be reviewed.").then(q => q.delete(15000))
     message.member.awaitMessages(filter, {
-      max: 5,
+      max: 1,
       time: 300000
     }).then(collected => {
       collected.delete(15000);
