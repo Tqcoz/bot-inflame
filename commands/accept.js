@@ -6,12 +6,12 @@ module.exports.run = async (bot, message, client, args) => {
    if(!message.member.hasPermission("ADMINISTRATOR")) return ;
    
 let aUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-let contentyay = args.join(" ").slice(28);
 
 let embed = new Discord.RichEmbed()
 .setTitle("InflameMC")
-.addField(":white_check_mark: Staff Application Accepted!", "Please contact `pvpar#0001` for further information!")
+.addField(":x: | InflameMC Staff Application **denied**. Thanks for applying!")
 .setFooter("join.inflamemc.com | Time: ${message.createdAt}")
+.setURL("https://minetex.xyz/flame")
 .setColor("#123cba");
 
 aUser.send(embed);
@@ -19,5 +19,5 @@ aUser.send(embed);
 }
 
 module.exports.help = {
-  name:"accept"
+  name:"deny"
 }
