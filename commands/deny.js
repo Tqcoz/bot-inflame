@@ -10,7 +10,7 @@ let aUser = message.guild.member(message.mentions.users.first() || message.guild
 let embed = new Discord.RichEmbed()
 .setTitle("InflameMC")
 .addField(":x: | InflameMC Staff Application **denied**. Thanks for applying!", "You may apply again in 30 days.")
-.setFooter("join.inflamemc.com | Time: ${message.createdAt}")
+.setFooter(`join.inflamemc.com | Time: ${message.createdAt}`)
 .setURL("https://minetex.xyz/flame")
 .setColor("#ffcccc");
 
