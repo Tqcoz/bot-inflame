@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, client, args) => {
     .setFooter("Time: ${message.createdAt}")
     .setColor("#006400");
 
-    giveaway.channel.send(enter)
+    giveaway.channel.send(enter);
    message.channel.send(':white_check_mark: Entered');
 
 }
