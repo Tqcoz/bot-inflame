@@ -22,7 +22,7 @@ await message.delete();
      
  appealsChannel.send(giveawayEmbed);
      message.channel.send(":ok_hand: Entered! Be sure to be active or you will not be spun!");
-  }
+});
  }
 module.exports.help = {
   name:"enter"
