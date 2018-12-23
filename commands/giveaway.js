@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const prefix = ".";
 
 module.exports.run = async (bot, message, client, args) => {
-    
+  
     let giveaway = message.guild.channels.find(`name`, "temp2");
     const enter = new discord.RichEmbed()
     .setTitle("Giveaway")
@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, client, args) => {
     .setFooter("Time: ${message.createdAt}")
     .setColor("#006400")
 
-    giveaway.channel.send(enter)
+    giveaway.send(enter)
    message.channel.send(':white_check_mark: Entered');
 
 }
