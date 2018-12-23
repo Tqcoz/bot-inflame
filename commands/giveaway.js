@@ -1,13 +1,13 @@
 const Discord = require("discord.js");
 const prefix = ".";
 
-module.exports.run = async (bot, message, client, args) => {
+module.exports.run = async (bot, message, args) => {
   if(!message.content.startsWith(prefix)) return ;
     let giveaway = message.guild.channels.find(`name`, "temp2");
     const enter = new discord.RichEmbed()
     .setTitle("Giveaway")
-    .setDescription("${message.author.username}${message.author.discriminator}")
-    .setFooter("Time: ${message.createdAt}")
+    .setDescription(`${message.member.username}${message.member.discriminator}`)
+    .setFooter(`Time: ${message.createdAt}`)
     .setColor("#006400");
 
     giveaway.send(enter);
